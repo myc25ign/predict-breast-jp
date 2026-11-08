@@ -7,12 +7,18 @@
 | `ts/` | PREDICT コアエンジン（Phase 1–2） |
 | `ui/` | React デモアプリ（Phase 3） |
 
-## Vercel 設定
+## GitHub Pages（自動）
 
-1. Vercel で Git 連携リポジトリを接続
+- リポジトリ: https://github.com/myc25ign/predict-breast-jp
+- `master` への push で `.github/workflows/deploy-ui.yml` が `ui/` をビルドして公開
+- 公開 URL: **https://myc25ign.github.io/predict-breast-jp/**（初回は Actions 完了後）
+
+## Vercel（任意）
+
+1. Vercel で GitHub リポジトリ `myc25ign/predict-breast-jp` を連携
 2. **Root Directory**: `ui`
 3. Framework Preset: Vite（`ui/vercel.json` 参照）
-4. `main` / `master` への push で自動デプロイ
+4. `master` への push で自動デプロイ（`base` は `/` のまま）
 
 `vercel deploy` や CLI 直アップロードは使わず、**git push のみ**。
 
